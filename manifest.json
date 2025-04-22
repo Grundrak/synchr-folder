@@ -1,0 +1,56 @@
+{
+  "name": "CTM RH CV",
+  "short_name": "CTM CV",
+  "description": "Application de gestion des CV pour CTM RH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [{
+    "name": "Select Folder",
+    "url": "/?action=select-folder",
+    "description": "Select a folder to monitor"
+  }],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "permissions": [
+    "fileSystem",
+    "periodic-background-sync",
+    "background-sync",
+    "storage"
+  ],
+  "periodic_sync": {
+    "periodic_tasks": [{
+      "name": "check-new-files",
+      "period": 900,
+      "powersave": false
+    }, {
+      "name": "sync-emails",
+      "period": 86400,
+      "powersave": true
+    }]
+  },
+  "background": {
+    "scripts": ["sw.js"],
+    "persistent": true
+  },
+  "background_sync": {
+    "sync": "enabled"
+  }
+}

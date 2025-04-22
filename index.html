@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4080C9" />
+  <title>CTM RH CV</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>CTM-CV-WA2</h1>
+    </header>
+    <main class="app-main">
+      <p>Sélectionnez un dossier contenant les CV à surveiller :</p>
+      <button id="selectFolder" class="primary-button">Sélectionner un dossier</button>
+     
+      <div id="syncStatus" class="sync-status" style="display: none;">
+        <div class="status-indicator">
+          <span class="status-dot active"></span>
+          <span>Surveillance active</span>
+        </div>
+        <p class="sync-description">Cette application surveillera automatiquement le dossier sélectionné. Tous les nouveaux fichiers seront envoyés par email.</p>
+      </div>
+     
+      <div id="noSupport" class="no-support" style="display: none;">
+        <p>Votre navigateur ne prend pas en charge l'API File System Access.</p>
+        <p>Essayez avec Chrome, Edge ou un autre navigateur moderne.</p>
+      </div>
+     
+      <div id="currentPath" class="current-path" style="display: none;"></div>
+      
+      <div id="fileList" class="file-list" style="display: none;">
+        <!-- Les fichiers seront ajoutés dynamiquement ici -->
+      </div>
+    </main>
+    <footer class="app-footer">
+      <p>&copy; 2025 CTM-CV</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
